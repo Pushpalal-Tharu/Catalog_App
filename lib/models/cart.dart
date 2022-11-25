@@ -22,7 +22,6 @@ class CartModel {
 
   // Set Catalog
   set catalog(CatalogModel newCatalog) {
-    assert(newCatalog != null);
     _catalog = newCatalog;
   }
 
@@ -35,25 +34,25 @@ class CartModel {
 }
 
 class AddMutation extends VxMutation<MyStore> {
-  final Item? item;
+  final Item item;
   AddMutation(
     Item catalog, {
     required this.item,
   });
   @override
   perform() {
-    store!.cart._itemIds.add(item!.id);
+    store!.cart._itemIds.add(item.id);
   }
 }
 
 class RemoveMutation extends VxMutation<MyStore> {
-  final Item? item;
+  final Item item;
   RemoveMutation(
     Item catalog, {
     required this.item,
   });
   @override
   perform() {
-    store!.cart._itemIds.remove(item!.id);
+    store!.cart._itemIds.remove(item.id);
   }
 }

@@ -78,10 +78,8 @@ class _CartList extends StatelessWidget {
               leading: Icon(Icons.done),
               trailing: IconButton(
                   icon: Icon(Icons.remove_circle_outline),
-                  onPressed: () => RemoveMutation(
-                        _cart.items[index],
-                        item: null,
-                      )),
+                  onPressed: () => RemoveMutation(_cart.items[index],
+                      item: _cart.items[index])),
               title: _cart.items[index].name.text.make(),
             ),
           );
